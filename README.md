@@ -1,17 +1,15 @@
 # my-vue-project
 
-> A Vue.js project
-
-## Build Setup
-
+  该项目是我第一个vue练手项目。项目中使用了vue.js框架，vue-router.js路由，mint-ui构建的简单通信录应用。你可以通过[项目Demo](https://yunchen132.github.io/my-vue-project)查看。谢谢你的支持！
+## 构建步骤
 ``` bash
-# install dependencies
+# 安装开发环境依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 热启动服务在 localhost:8080
 npm run dev
 
-# build for production with minification
+# 构建生产环境文件
 npm run build
 
 # build for production and view the bundle analyzer report
