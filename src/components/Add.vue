@@ -1,24 +1,31 @@
 <template>
-  <form class="add-form">
+  <div class="mui-content-padded">
     <div class="form-group">
       <div class="img-box"><img src="../assets/img/logo.png"></div>
     </div>
-    <div class="form-group">
-      <input type="text" placeholder="姓名" v-model="postCard.name">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="手机" v-model="postCard.phone">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="QQ" v-model="postCard.qq">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="标签" v-model="postCard.tag">
-    </div>
-    <div>
-      <button type="button" class="btn-blue" v-on:click="submitForm">提交</button>
-    </div>
-  </form>
+    <form class="mui-input-group add-form">
+      <div class="mui-input-row">
+        <label>姓名</label>
+        <input type="text" placeholder="请输入姓名" v-model="postCard.name">
+      </div>
+      <div class="mui-input-row">
+        <label>手机</label>
+        <input type="text" placeholder="请输入手机" v-model="postCard.phone">
+      </div>
+      <div class="mui-input-row">
+        <label>QQ</label>
+        <input type="text" placeholder="请输入QQ" v-model="postCard.qq">
+      </div>
+      <div class="mui-input-row">
+        <label>标签</label>
+        <input type="text" placeholder="请输入标签" v-model="postCard.tag">
+      </div>
+      <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" v-on:click="submitForm">提交</button>
+      </div>
+    </form>
+  </div>
+
 </template>
 <script>
   import Store from '../store'

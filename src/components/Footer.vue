@@ -8,7 +8,7 @@
         <div class="icon-box"><span class="iconfont icon-zixunlist"></span></div>
         列表页
       </mt-tab-item>
-      <mt-tab-item id="user" href="#/account">
+      <mt-tab-item id="account" href="#/account">
         <div class="icon-box"><span class="iconfont icon-iconfontweibiaoti1015"></span></div>
         个人中心
       </mt-tab-item>
@@ -20,6 +20,10 @@
       return {
         selected:'index'
       }
+    },
+    created:function(){
+      console.log( this.$route.name)
+      this.selected=this.$route.name;
     }
   }
 </script>

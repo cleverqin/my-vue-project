@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
+      name: 'index',
       component: Hello
     },
     {
@@ -23,17 +23,17 @@ export default new Router({
     },
     {
       path: '/list',
-      name: 'List',
+      name: 'list',
       component: List
     },
     {
       path: '/account',
-      name: 'Account',
+      name: 'account',
       component: Account
     },
     {
       path: '/add',
-      name: 'Add',
+      name: 'add',
       component: Add
     }
     ,

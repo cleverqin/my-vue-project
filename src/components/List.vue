@@ -1,19 +1,18 @@
 <template>
-<div class="list">
+<div class="list mui-content">
   <form class="search-form">
     <div class="form-group">
       <input type="text" placeholder="搜索" v-model="keyWord">
     </div>
   </form>
-  <ul>
-    <li class="list-item" v-for="item in list">
-      <router-link class="list-card" :to="{ name: 'detail', params: { id: item.id }}">
-        <div class="row-left"><img src="../assets/img/logo.png"></div>
-        <div class="row-right">
-          <div class="name-row">{{item.name}}</div>
-          <div class="phone-row">{{item.phone}}</div>
+  <ul class="mui-table-view mui-table-view-chevron">
+    <li class="mui-table-view-cell mui-media" v-for="item in list">
+      <router-link :to="{ name: 'detail', params: { id: item.id }}" class="mui-navigate-right">
+        <img class="mui-media-object mui-pull-left" src="../assets/img/shuijiao.jpg">
+        <div class="mui-media-body">
+          {{item.name}}
+          <p class="mui-ellipsis">{{item.phone}}</p>
         </div>
-        <span class="right-icon iconfont icon-tubiao04-copy"></span>
       </router-link>
     </li>
   </ul>

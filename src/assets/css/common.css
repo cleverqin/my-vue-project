@@ -1,5 +1,5 @@
 html, body, iframe,
-h1, h2, h3, h4, h5, h6, p, ol, ul, form, dl, dd, td, input, table, tr {
+h1, h2, h3, h4, h5, h6, p, ol, ul, form, dl, dd, td, table, tr {
   margin: 0;
   padding: 0;
   font-family: "Microsoft YaHei", SimHei, "Microsoft JhengHei", "STHeiti ";
@@ -37,6 +37,7 @@ a {
 body{
   padding-bottom: 56px;
   padding-top: 40px;
+  background-color: #fcfcfc;
 }
 /************************************/
 .icon-box .iconfont{
@@ -100,32 +101,18 @@ body{
 }
 .search-form{
   padding: 10px ;
-  background: #eeeeee;
+  background: #fafafa;
 }
 .search-form .form-group{
   margin-bottom: 0;
 }
 /***************add-form****************/
-.add-form{
-  padding: 15px;
-}
-.form-group input[type='text']{
-  box-sizing: border-box;
-  width: 100%;
-  line-height: 30px;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid #a8a8a8;
-}
-.form-group{
-  margin-bottom: 15px;
-}
 .img-box{
   width: 80px;
   height: 80px;
   box-sizing: border-box;
   margin: 0 auto;
+  padding: 5px;
 }
 .img-box img{
   display: block;
@@ -157,17 +144,27 @@ body{
   outline: none;
   border: none;
   color: #fff;
-}
-.btn-back{
-  display: block;
-  box-sizing: border-box;
   width: 100%;
   line-height: 30px;
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 4px;
+}
+.btn-back{
+  display: block;
+  box-sizing: border-box;
   outline: none;
   border: 1px solid #848484;
   color: #848484;
   text-align: center;
+}
+.add-form .mui-button-row{
+  padding: 5px;
+  height: auto !important;
+}
+.add-form .mui-button-row:first-child{
+  padding-top: 15px;
+}
+.add-form .mui-btn-block{
+  padding: 5px;
 }
