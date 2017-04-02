@@ -1,4 +1,78 @@
 
+body{
+  overflow-x: hidden;
+}
+/**
+* vue-router transition
+*/
+.router-view {
+  width: 100%;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.vux-pop-out-enter-active,
+.vux-pop-out-leave-active,
+.vux-pop-in-enter-active,
+.vux-pop-in-leave-active {
+  will-change: transform;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.vux-pop-out-enter-active {
+  animation-name: popInLeft;
+}
+.vux-pop-out-leave-active {
+  animation-name: popOutRight;
+}
+.vux-pop-in-enter-active {
+  perspective: 1000;
+  animation-name: popInRight;
+}
+.vux-pop-in-leave-active {
+  animation-name: popOutLeft;
+}
+@keyframes popInLeft {
+from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+}
+@keyframes popOutLeft {
+from {
+    opacity: 1;
+}
+to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes popInRight {
+from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+}
+@keyframes popOutRight {
+from {
+    opacity: 1;
+}
+to {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+}
+
 .hello[data-v-6c3bab78]{
   padding: 15px;
 }
@@ -12,6 +86,64 @@
   line-height: 1.75em;
   color: #696969;
   margin-bottom: 10px;
+}
+
+.contact-list-box{
+  border-top: 1px solid #ddd;
+}
+.contact-item{
+  padding: 10px 15px;
+  background: #fff;
+  position: relative;
+}
+.contact-item:after{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 15px;
+  height: 1px;
+  content: '';
+  transform: scaleY(.5);
+  background-color: #919095;
+}
+.contact-item-link{
+  display: block;
+}
+.contact-item-link:after{
+  display: table;
+  content: "";
+  clear: both;
+}
+.contact-pic-box{
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.contact-pic-box img{
+  width: 60px;
+  height: 60px;
+  border-radius:50% ;
+}
+.contact-msg-box{
+  margin-left: 65px;
+  padding: 5px;
+}
+.contact-row-box{
+  line-height: 25px;
+}
+.contact-name{
+  font-size: 16px;
+  color: #000000;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.contact-tag{
+  font-size: 12px;
+  color: #999;
+}
+.contact-phone{
+  font-size: 14px;
+  color: #666;
 }
 
 .msg-list[data-v-ea7030c2]{
@@ -2218,4 +2350,4 @@ body{
   padding: 5px;
 }
 
-/*# sourceMappingURL=app.b51836d922381454ece74f75be467f1b.css.map*/
+/*# sourceMappingURL=app.a6a4ab9c76caa4d51c82932df2978687.css.map*/
