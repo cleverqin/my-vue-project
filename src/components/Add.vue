@@ -1,5 +1,5 @@
 <template>
-  <div class="mui-content-padded">
+  <div class="">
     <div class="form-group">
       <div class="img-box"><img src="../assets/img/logo.png"></div>
     </div>
@@ -20,10 +20,10 @@
         <label>标签</label>
         <input type="text" placeholder="请输入标签" v-model="postCard.tag">
       </div>
-      <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" v-on:click="submitForm">提交</button>
-      </div>
     </form>
+    <div class="btn-box">
+      <button type="button" class="mui-btn mui-btn-primary mui-btn-block" v-on:click="submitForm">提交</button>
+    </div>
   </div>
 
 </template>
@@ -92,3 +92,11 @@
       }
     }
 </script>
+<style scoped>
+  .btn-box{
+    margin: 15px 15px 0;
+  }
+  .btn-box button{
+    padding: 5px 0;
+  }
+</style>

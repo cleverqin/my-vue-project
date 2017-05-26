@@ -1,5 +1,5 @@
 <template>
-  <div class="mui-content-padded">
+  <div class="">
     <div class="form-group">
       <div class="img-box"><img src="../assets/img/logo.png"></div>
     </div>
@@ -20,16 +20,16 @@
         <label>标签</label>
         <input type="text" placeholder="请输入标签" v-model="postCard.tag">
       </div>
-      <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" v-on:click="submitForm">提交</button>
-      </div>
-      <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-danger mui-btn-block" v-on:click="delPostCard">删除</button>
-      </div>
-      <div class="mui-button-row">
-        <router-link  class="mui-btn mui-btn-block mui-btn-outlined" v-on:click="submitForm" to="/list">返回</router-link>
-      </div>
     </form>
+    <div class="mui-button-row" id="row-first">
+      <button type="button" class="mui-btn mui-btn-primary mui-btn-block " v-on:click="submitForm">提交</button>
+    </div>
+    <div class="mui-button-row">
+      <button type="button" class="mui-btn mui-btn-danger mui-btn-block " v-on:click="delPostCard">删除</button>
+    </div>
+    <div class="mui-button-row">
+      <router-link  class="mui-btn mui-btn-block mui-btn-outlined " v-on:click="submitForm" to="/list">返回</router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -109,3 +109,14 @@
     }
   }
 </script>
+<style>
+  .mui-button-row{
+    margin: 0 15px;
+  }
+  #row-first{
+    margin-top: 15px;
+  }
+  .mui-button-row .mui-btn-block{
+    padding: 5px 0;
+  }
+</style>

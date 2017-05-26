@@ -21,12 +21,24 @@
         selected:'index'
       }
     },
+    watch:{
+      '$route':'isTab'
+    },
     created:function(){
-      console.log( this.$route.name)
       this.selected=this.$route.name;
+    },
+    methods:{
+      isTab(){
+        this.selected=this.$route.name;
+      }
     }
   }
 </script>
+<style scoped>
+  body .mint-tab-item.is-selected{
+      background: transparent;
+  }
+</style>
 
 
 

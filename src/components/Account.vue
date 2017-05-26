@@ -1,7 +1,9 @@
 <template>
 <div class="account">
+  <div class="pic-imgBox">
+    <div class="img-box"><img src="../assets/img/header.png"></div>
+  </div>
   <ul class="msg-list">
-    <li><div><div class="img-box"><img src="../assets/img/header.png"></div></div></li>
     <li><span class="tag-label">昵称：</span><span class="tag-txt">似水流年</span></li>
     <li><span class="tag-label">QQ：</span><span class="tag-txt">705597001</span></li>
     <li><span class="tag-label">邮箱：</span><span class="tag-txt">705597001@qq.com</span></li>
@@ -18,7 +20,7 @@
   .msg-list li{
     line-height: 30px;
     font-size: 14px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
     padding: 5px;
   }
   .msg-list li .tag-txt{
@@ -34,6 +36,11 @@
     width: 200px;
     height: 200px;
     margin: 0 auto;
+  }
+  .pic-imgBox{
+    padding: 30px;
+    background: url("../assets/img/bg.jpg") no-repeat center;
+    background-size:  100% auto;
   }
 </style>
 

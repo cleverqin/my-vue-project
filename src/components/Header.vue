@@ -1,8 +1,6 @@
 <template>
   <mt-header title="通信录应用" fixed>
-    <router-link to="/" slot="left">
-      <mt-button icon="back">返回</mt-button>
-    </router-link>
+    <mt-button icon="back" @click="goBack" slot="left">返回</mt-button>
     <router-link slot="right" to="/add">
       <span class="iconfont icon-plus"></span>
     </router-link>
@@ -12,6 +10,11 @@
   export default {
     data () {
       return {}
+    },
+    methods:{
+        goBack:function () {
+          this.$router.go(-1)
+        }
     }
   }
 </script>

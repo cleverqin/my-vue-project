@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Headers></Headers>
-    <transition :name="'vux-pop-in'">
-      <router-view class="router-view"></router-view>
+    <Headers ></Headers>
+    <transition :name="transitionName">
+      <router-view class="child-view"></router-view>
     </transition>
-    <Footers></Footers>
+    <Footers sel="selected"></Footers>
   </div>
 </template>
 <script>
@@ -12,6 +12,23 @@
   import Headers from './components/Header'
   export default {
     name: 'app',
+    data () {
+      return {
+        transitionName: 'slide-left',
+        selected:"index"
+      }
+    },
+    beforeRouteUpdate (to, from, next) {
+      let isBack = this.$router.isBack;
+      console.log(11)
+      if (isBack) {
+        this.transitionName = 'slide-right'
+      } else {
+        this.transitionName = 'slide-left'
+      }
+      this.$router.isBack = false
+      next()
+    },
     components:{
       Footers,
       Headers
@@ -19,76 +36,19 @@
   }
 </script>
 <style>
-  body{
-    overflow-x: hidden;
-  }
-  /**
-  * vue-router transition
-  */
-  .router-view {
-    width: 100%;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    backface-visibility: hidden;
-  }
-  .vux-pop-out-enter-active,
-  .vux-pop-out-leave-active,
-  .vux-pop-in-enter-active,
-  .vux-pop-in-leave-active {
-    will-change: transform;
-    height: 100%;
+  .child-view {
     position: absolute;
-    left: 0;
+    width:100%;
+    transition: all .8s cubic-bezier(.55,0,.1,1);
   }
-  .vux-pop-out-enter-active {
-    animation-name: popInLeft;
+  .slide-left-enter, .slide-right-leave-active {
+    opacity: 0;
+    -webkit-transform: translate(50px, 0);
+    transform: translate(50px, 0);
   }
-  .vux-pop-out-leave-active {
-    animation-name: popOutRight;
-  }
-  .vux-pop-in-enter-active {
-    perspective: 1000;
-    animation-name: popInRight;
-  }
-  .vux-pop-in-leave-active {
-    animation-name: popOutLeft;
-  }
-  @keyframes popInLeft {
-    from {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  @keyframes popOutLeft {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
-  }
-  @keyframes popInRight {
-    from {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  @keyframes popOutRight {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
+  .slide-left-leave-active, .slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-50px, 0);
+    transform: translate(-50px, 0);
   }
 </style>

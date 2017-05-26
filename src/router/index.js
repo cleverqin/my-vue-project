@@ -6,7 +6,10 @@ import List from 'components/List'
 import Account from 'components/Account'
 import Add from 'components/Add'
 import Detail from 'components/Detail'
-
+Router.prototype.goBack = function () {
+  this.isBack = true
+  window.history.go(-1)
+}
 Vue.use(Router)
 
 export default new Router({
