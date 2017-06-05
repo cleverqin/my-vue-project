@@ -1,6 +1,7 @@
 <template>
 <div class="account">
   <div class="pic-imgBox">
+    <img src="../assets/img/bg.jpg" id="topBg">
     <div class="img-box"><img src="../assets/img/header.png"></div>
   </div>
   <ul class="msg-list">
@@ -14,6 +15,17 @@
 </div>
 </template>
 <style scoped>
+  .pic-imgBox{
+    position: relative;
+  }
+  #topBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
   .msg-list{
     padding: 15px;
   }
@@ -39,7 +51,6 @@
   }
   .pic-imgBox{
     padding: 30px;
-    background: url("../assets/img/bg.jpg") no-repeat center;
     background-size:  100% auto;
   }
 </style>
